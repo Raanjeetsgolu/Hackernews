@@ -1,0 +1,18 @@
+.postdetails{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    color:blue;
+}
+
+.postdetails_points{
+    font-size: small;
+    margin-top: -25px;
+}
+.postdetails_comment{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: black;
+}

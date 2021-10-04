@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Displayresult from './Components/Displayresult'
+import Home from './Components/Home'
 
-function App() {
+
+const App = () => {
+  const [id, setid] = useState()
+  const idhandler=(e)=>{
+    setid(e)
+  }
   return (
+    
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <Switch>
+        <Route path='/details'>
+      <Displayresult objetval={id}/>
+      </Route>
+
+        <Route path="/">
+          <Home idhandler={idhandler} />
+        </Route>
+      </Switch>
     </div>
-  );
+  </Router>
+  )
 }
 
-export default App;
+export default App
